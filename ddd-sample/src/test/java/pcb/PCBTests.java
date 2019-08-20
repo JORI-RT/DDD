@@ -18,8 +18,7 @@ class PCBTests {
     }
 
     @Test
-    void a() {
-
+    void assignRuleToBusAndBiographyNet() {
         Net a0 = new Net("a0");
         Net a1 = new Net("a1");
         Bus a = new Bus("a");
@@ -31,7 +30,8 @@ class PCBTests {
         a.assignRule(minWith4);
 
         assertThat(a0.assignedRules()).contains(minWith4);
-
+        assertThat(minWith4).isEqualTo(a0.getRule(MIN_WITH));
+        assertThat(minWith4).isEqualTo(a1.getRule(MIN_WITH));
     }
 }
 

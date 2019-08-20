@@ -3,6 +3,7 @@ package pcb;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 abstract class AbstractNet {
     private Set rules = new HashSet();
@@ -37,6 +38,11 @@ class Net extends AbstractNet {
         result.addAll(bus.assignedRules());
         return result;
     }
+
+    // TODO
+    public LayoutRule getRule(RuleType ruleType) {
+        return new NetRule();
+    }
 }
 
 /**
@@ -54,5 +60,24 @@ class Bus extends AbstractNet {
         net.setBus(this);
         nets.add(net);
     }
+
+    @Override
+    public void assignRule(LayoutRule rule) {
+        this.nets = nets.stream().peek(net -> net.assignRule(rule)).collect(Collectors.toSet());
+    }
+}
+
+abstract class LayoutRule {
+}
+
+class NetRule extends LayoutRule {
+    public static NetRule createRule(RuleType ruleType, int num) {
+        return null;
+    }
+}
+
+enum RuleType {
+    MIN_WITH,
+    MAX_VIAS
 }
 
