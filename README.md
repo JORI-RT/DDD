@@ -28,8 +28,8 @@ path : ddd/part1
 ```
 
 8/16日のフィードバック
-・githubに移行する　<= 上長の許可はとりました
+・githubに移行する　<= 上長の許可はとりました  
 ・みんな該当の章を読んでくる
 
-[DDD勉強会１](https://moznion.hatenadiary.com/entry/2017/08/31/190458)
+[DDD勉強会１](https://moznion.hatenadiary.com/entry/2017/08/31/190458)  
 [DDD勉強会２](https://developer.hatenastaff.com/entry/2015/08/20/170300)
