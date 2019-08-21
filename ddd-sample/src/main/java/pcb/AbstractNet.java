@@ -22,6 +22,7 @@ abstract class AbstractNet {
  */
 class Net extends AbstractNet {
     private String name;
+    // いらない説あるが、、、
     private Bus bus;
 
     public Net(String name) {
