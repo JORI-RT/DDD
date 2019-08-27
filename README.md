@@ -28,7 +28,7 @@ DDDをやるべきは事業会社のエンジニア → もっとも優先すべ
 * [CH1](./document/part1/ch1.md)
 * [CH2](./document/part1/ch2.md)
 * [CH3](./document/part1/ch3.md)
-
+* [CH4](./document/part2/ch4.md)
 ---
 
 8/16日のフィードバック
