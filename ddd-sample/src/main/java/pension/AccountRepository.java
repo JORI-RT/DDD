@@ -14,4 +14,8 @@ public class AccountRepository {
         return accounts;
     }
 
+    public void balkDelete(List<Account> shouldDeleteAccounts) {
+        accounts.removeAll(shouldDeleteAccounts);
+    }
+
 }

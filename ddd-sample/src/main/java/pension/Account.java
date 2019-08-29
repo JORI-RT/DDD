@@ -17,7 +17,8 @@ public class Account {
     private List<Stock> stocks = new ArrayList<>();   // 口座に入っている投資商品
     private LocalDate lastDealDate = LocalDate.now(); // 最終取引日
 
-    Account(Contractor contractor) {
+    Account(DealStrategy dealStrategy, Contractor contractor) {
+        this.dealStrategy = dealStrategy;
         this.accountNo = UUID.randomUUID();
         this.contractor = contractor;
     }
@@ -26,23 +27,20 @@ public class Account {
         return contractor;
     }
 
-    // 月一で走るメソッド、サービスとかにして外だしするのが正しいかも
-    public void buy() {
+    public int getCurrentValue() {
+        // TODO もっといい書き方アリそう、直接reduceの仕方がわからんかった
+        return stocks.stream().map(s -> s.getPrice()).reduce(0, (s1, s2) -> s1 + s2);
+    }
+
+    /**
+     * 月に一回、決められたルールに基づいて取引を行う
+     */
+    public void dealPerMonth() {
         stocks.addAll(dealStrategy.buy());
         lastDealDate = LocalDate.now();
     }
 
-    // ６ヶ月取引がなかったら国庫に返納されることを表現する
-    // これもこのクラスが表現すべきではないかも
-    public void KillAccount() {
-        if (afterSixMonth()) {
-            // 国庫に返納
-            stocks = null;
-        }
-    }
-
-    // TODO ６ヶ月ごを表現
-    private boolean afterSixMonth() {
+    public boolean afterSixMonth() {
         return lastDealDate.toEpochDay() > 11;
     }
 }

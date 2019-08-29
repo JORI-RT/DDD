@@ -5,6 +5,9 @@ import org.junit.jupiter.api.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+/**
+ * 確定拠出年金にまつわるドメインのテスト
+ */
 class AccountTest {
     @Nested
     class CreateAccount {
@@ -21,9 +24,10 @@ class AccountTest {
             // arrange
             Company companyA = new Company("A");
             Contractor takaki = new Contractor("takaki", companyA);
+            DealStrategy dealStrategy = DealStrategy.create();
             AccountFactory accountFactory = new AccountFactory(accountRepository);
             // act
-            Account account = accountFactory.createAccount(takaki);
+            Account account = accountFactory.createAccount(takaki, dealStrategy);
             // assert
             assertThat(account.getContractor().getName()).isEqualTo("takaki");
             assertThat(account.getContractor().getCompany().getName()).isEqualTo("A");
@@ -35,13 +39,14 @@ class AccountTest {
             // arrange
             Company companyA = new Company("A");
             Contractor takaki = new Contractor("takaki", companyA);
+            DealStrategy dealStrategy = DealStrategy.create();
             AccountFactory accountFactory = new AccountFactory(accountRepository);
             // act
-            Account acount = accountFactory.createAccount(takaki);
+            Account acount = accountFactory.createAccount(takaki, dealStrategy);
 
             // assert
             assertThatThrownBy(
-                    () -> accountFactory.createAccount(takaki))
+                    () -> accountFactory.createAccount(takaki,dealStrategy))
                     .isInstanceOf(DuplicateAccountException.class);
         }
     }
