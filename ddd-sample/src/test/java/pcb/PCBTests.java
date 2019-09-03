@@ -1,5 +1,6 @@
 package pcb;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -9,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static pcb.RuleType.MIN_WITH;
 
 class PCBTests {
+    @Disabled
     @Test
     void initialization() {
         File aFile = null;
@@ -17,6 +19,7 @@ class PCBTests {
         BusRepository.addAll(buses);
     }
 
+    @Disabled
     @Test
     void assignRuleToBusAndBiographyNet() {
         Net a0 = new Net("a0");
