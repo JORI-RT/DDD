@@ -1,4 +1,4 @@
-``` puml
+```puml
 @startuml
 class Person
 interface ScrumRole
