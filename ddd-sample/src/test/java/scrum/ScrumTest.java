@@ -1,18 +1,11 @@
 package scrum;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 
 class ScrumTest {
 
-    @DisplayName("今スプリントでチームが作業するリスト＝＞SBLを見えるか")
+/*    @DisplayName("今スプリントでチームが作業するリスト＝＞SBLを見えるか")
     @Test
     void test01() {
         List<BL> bls = new ArrayList<>();
@@ -23,15 +16,15 @@ class ScrumTest {
 
         SBL currentSBL = SBLFactory.create(bls);
         assertThat(currentSBL.totalEstimatePoint()).isEqualTo(17);
-    }
+    }*/
 
-    @Disabled
-    @DisplayName("プロダクトの出来具合＝インクリメントの見える化")
-    @Test
-    void test02() {
-        SBL sbl = SBLRepository.find(1);
-        sbl.review();
-        int dp =  sbl.TotalDonePoint();
-        assertThat(dp).isEqualTo(13);
-    }
+//    @Disabled
+//    @DisplayName("プロダクトの出来具合＝インクリメントの見える化")
+//    @Test
+//    void test02() {
+//        SBL sbl = SBLRepository.find(1);
+//        sbl.review();
+//        int dp =  sbl.TotalDonePoint();
+//        assertThat(dp).isEqualTo(13);
+//    }
 }
