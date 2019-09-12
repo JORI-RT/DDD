@@ -1,4 +1,4 @@
-package scrum;
+package scrum.Organization;
 
 public class ScrumMaster {
 
