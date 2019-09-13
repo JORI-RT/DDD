@@ -43,16 +43,16 @@ class CorporationAccount {
 }
 
 
-Company "0..*" ..o "1..*" Person
-Company "1" ..* "*" Division
-Division "1" ..* "*" Division
-Division "1..*" ..o "1..*" Person
+Company "0..*" o.. "1..*" Person
+Company "1" *.. "*" Division
+Division "1" *.. "*" Division
+Division "1..*" o.. "1..*" Person
 Acconut <|.. IndividualAccount
 Acconut <|.. CorporationAccount
-Person "1" ..o "*" IndividualAccount
-Company "1" ..o "*" CorporationAccount
+Person "1" o.. "*" IndividualAccount
+Company "1" o.. "*" CorporationAccount
 Person .. "develop" Product
-Company "1" ..o "*" Product
+Company "1" o.. "*" Product
 
 @enduml
 ```
