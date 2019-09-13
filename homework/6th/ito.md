@@ -31,9 +31,22 @@ package スクラム開発 {
     }
 
     interface スクラムチーム
-    class PO
-    class SM
-    class DEV
+    class PO {
+        プロダクトに対しての責任
+        ---
+        PBI maxROI(ビジネス要件)
+    }
+    class SM {
+        スクラムチームの環境に対しての責任
+        ---
+        void modEnviroment(スクラムチーム)
+        進捗状況 tracking(スプリント)
+    }
+    class DEV {
+        作業プロセスとスプリント内にタスクをコミットすることに対する責任
+        ---
+        価値のあるプロダクト makeProduct(PBI)
+    }
 
     
     interface スクラムイベント
