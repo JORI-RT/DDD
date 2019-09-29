@@ -13,6 +13,6 @@ public class DelinquentService {
     public boolean accountIsDelinquent(Customer customer) {
         InvoiceSpecification delinquentSpec = new DelinquentInvoiceSpecification(LocalDate.now());
         return customer.getInvoices().stream()
-                .allMatch(candidate -> delinquentSpec.isSatisifiedBy(candidate));
+                .allMatch(candidateInvoice -> delinquentSpec.isSatisifiedBy(candidateInvoice));
     }
 }

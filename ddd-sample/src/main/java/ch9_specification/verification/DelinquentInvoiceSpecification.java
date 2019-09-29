@@ -25,6 +25,7 @@ public class DelinquentInvoiceSpecification implements InvoiceSpecification{
 
     @Override
     public String asSql() {
+        // いい感じのSQLを実装
         return null;
     }
 }
