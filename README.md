@@ -79,4 +79,5 @@ DDDをやるべきは事業会社のエンジニア → もっとも優先すべ
 
 [DDD勉強会１](https://moznion.hatenadiary.com/entry/2017/08/31/190458)  
 [DDD勉強会２](https://developer.hatenastaff.com/entry/2015/08/20/170300)  
-[DDD の Java EE 実装サンプル](https://qiita.com/opengl-8080/items/4f8938c65d8a2b7e50d0)
+[DDD の Java EE 実装サンプル](https://qiita.com/opengl-8080/items/4f8938c65d8a2b7e50d0)  
+[DDDをカタログ化したもの、すげーみやすい](https://www.ogis-ri.co.jp/otc/hiroba/technical/DDDEssence/chap1.html)
