@@ -10,9 +10,9 @@ public class DelinquentService {
      * @param customer 顧客
      * @return 延滞した請求書があればtrue
      */
-    public boolean accountIsDelinquent(Customer customer) {
-        InvoiceSpecification delinquentSpec = new DelinquentInvoiceSpecification(LocalDate.now());
+    public boolean accountIsDelinquent(Customer customer, LocalDate referenceDate) {
+        InvoiceSpecification delinquentSpec = new DelinquentInvoiceSpecification(referenceDate);
         return customer.getInvoices().stream()
-                .allMatch(candidateInvoice -> delinquentSpec.isSatisifiedBy(candidateInvoice));
+                .anyMatch(delinquentSpec::isSatisifiedBy);
     }
 }
