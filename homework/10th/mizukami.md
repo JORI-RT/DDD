@@ -65,8 +65,14 @@ class Librarian {
 note "社員証と本からLoanBooksを作成する" as N1
 Librarian .. N1
 
+class isbn{
++ String isbn
+}
+
+isbn o.. Books
+isbn o.. LoanBooks
+
 class Books{
-  + String isbn
   + String num
   String title
   void Registration()
@@ -76,7 +82,6 @@ note "N冊目という意味のnum" as N2
 Books .. N2
 
 class LoanBooks{
-  + String isbn
   + String lentTimes
   + String userId
   boolean reveiveFlg
