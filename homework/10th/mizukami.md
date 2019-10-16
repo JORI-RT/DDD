@@ -55,7 +55,7 @@ class 社員証 {
   + String id
   String userId
 }
-Users ..o 社員証
+Users .. 社員証
 
 class Librarian {
   void lent(社員証, Books)
@@ -69,8 +69,8 @@ class isbn{
 + String isbn
 }
 
-isbn o.. Books
-isbn o.. LoanBooks
+Books ..|> isbn
+LoanBooks ..|> isbn
 
 class Books{
   + String num
@@ -84,9 +84,12 @@ Books .. N2
 class LoanBooks{
   + String lentTimes
   + String userId
-  boolean reveiveFlg
+  boolean receiveFlg
   void lent()
   void reveive()
 }
+
+note "lentTimeは貸出された回数。貸出と返却時にはドメインで意識せず、DBに任せる" as N3
+LoanBooks ..N3
 @enduml
 ```
